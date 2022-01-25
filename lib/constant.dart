@@ -7,4 +7,12 @@ class K {
   static const borderColor = Color(0xFFF0E5CF);
   static const cardColor = Color(0xFF082032);
   static const whiteColor = Colors.white;
+
+
+  static const sizedBoxH=SizedBox(
+    height: 22,
+  );
+  static const sizedBoxW=SizedBox(
+    width: 22,
+  );
 }
