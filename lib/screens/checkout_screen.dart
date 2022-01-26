@@ -1,10 +1,11 @@
 import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
+import 'package:apex/screens/cart_screen.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get.dart';
 
 import '../constant.dart';
 
@@ -14,7 +15,8 @@ class CheckOutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {Get.back();}, actions: [],),
+        onPressed: () {Get.back();}, actions: [
+      ],),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 20.0, top: 15.0, right: 20.0),
