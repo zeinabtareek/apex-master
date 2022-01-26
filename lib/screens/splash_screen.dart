@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:apex/constant.dart';
+import 'package:apex/screens/cart_screen.dart';
 import 'package:apex/screens/login_screen/login_screen.dart';
 import 'package:apex/screens/product_details.dart';
 import 'package:apex/screens/register_screen/register_screen.dart';
@@ -32,12 +33,14 @@ class SplashScreen extends StatelessWidget {
               ),
             ))
           ],
-        ), nextScreen:  ProductDetails(),
+        ), nextScreen:  CartScreen(),
         backgroundColor: K.mainColor,
         splashIconSize: 250,
         duration: 4000,
         splashTransition: SplashTransition.scaleTransition,
         animationDuration: Duration(seconds: 1),
+
+
       ),
     );
   }
