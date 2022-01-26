@@ -188,8 +188,7 @@ class ProductDetails extends StatelessWidget {
                                         spreadRadius: 0.0,
                                         offset: Offset(.5, .5), // shadow direction: bottom right
                                       )
-                                    ],
-                                    ),
+                                    ],),
                                   ),
                                 const SizedBox(
                                   width: 8,
