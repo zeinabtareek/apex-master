@@ -14,9 +14,7 @@ class OrderDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {
-          Get.back();
-        },
+
         actions: [
           IconButton(
             onPressed: () {},

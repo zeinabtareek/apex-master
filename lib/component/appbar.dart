@@ -8,19 +8,17 @@ import '../constant.dart';
 
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final VoidCallback onPressed;
-  List<Widget> actions = [];
+  final List<Widget>? actions ;
 
 
 
-  CustomAppBar({
+  const CustomAppBar({
     Key? key,
-    required this.onPressed,
-    required this.actions ,
+     this.actions ,
 
   }) : super(key: key);
-  GlobalKey<ScaffoldState> ScaffoldKey = new GlobalKey<ScaffoldState>();
 
+  @override
   Size get preferredSize => const Size.fromHeight(60);
 
   @override
@@ -38,11 +36,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: actions,
-    //   [
-    //     IconButton(onPressed: (){}, icon: Icon(Icons.favorite_outline,color: Colors.black,size: 28,),),
-    //     IconButton(onPressed: () {}, icon: IconButton(icon: const Icon(EvaIcons.shoppingCartOutline, color: Colors.black, size: 30,), onPressed: () {Get.to(CartScreen());}),),
-    // K.sizedBoxW,
-    //   ],
+
     );
   }
 }

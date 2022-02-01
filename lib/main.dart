@@ -1,3 +1,7 @@
+import 'package:apex/routes/app_route.dart';
+import 'package:apex/routes/app_screen.dart';
+import 'package:apex/screens/product_details.dart';
+import 'package:apex/screens/product_details/products_screen.dart';
 import 'package:apex/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -11,10 +15,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(
-      ),
+      initialRoute: AppRoutes.splashScreen,
+      getPages: AppScreens.screens,
     );
   }
 }

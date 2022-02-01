@@ -1,23 +1,19 @@
 import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
-import 'package:apex/screens/checkout_screens/checkout_screen.dart';
 import 'package:apex/screens/order_screens/address_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import '../../constant.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class CartScreen extends StatelessWidget {
-   CartScreen({Key? key}) : super(key: key);
-  CustomAppBar customAppBar=CustomAppBar( onPressed: () {  }, actions: [],);
-  get doNothing => null;
+   const CartScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(onPressed: () {  }, actions: [], ),
+      appBar: const CustomAppBar( actions: [], ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 20.0, top: 15.0, right: 20.0),

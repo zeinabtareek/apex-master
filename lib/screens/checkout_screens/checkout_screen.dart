@@ -13,12 +13,11 @@ import '../../constant.dart';
 import 'confirmation_bill.dart';
 
 class CheckOutScreen extends StatelessWidget {
-  CustomAppBar customAppBar = CustomAppBar(onPressed: () {}, actions: [],);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        onPressed: () {Get.back();}, actions: [],),
+      appBar: const CustomAppBar(
+         actions: [],),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 20.0, top: 15.0, right: 20.0),

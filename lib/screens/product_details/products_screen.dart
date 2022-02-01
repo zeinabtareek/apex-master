@@ -1,0 +1,102 @@
+import 'package:apex/component/appbar.dart';
+import 'package:apex/component/buttons_product_screen.dart';
+import 'package:apex/component/card_products_screen.dart';
+import 'package:apex/routes/app_route.dart';
+import 'package:apex/screens/product_details/controller/product_details_controller.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../../constant.dart';
+
+class ProductsScreen extends StatelessWidget {
+  const ProductsScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final _controller = Get.put(ProductScreenController());
+    return Scaffold(
+      appBar: CustomAppBar(
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.favorite_outline,
+              color: K.grayColor,
+              size: 28,
+            ),
+          ),
+          IconButton(
+              icon: const Icon(
+                EvaIcons.shoppingCartOutline,
+                color: K.grayColor,
+                size: 30,
+              ),
+              onPressed: () {
+                Get.toNamed(AppRoutes.cartScreen);
+              }),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0, top: 15.0, right: 20.0),
+              child: Text(
+                'Products',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: 50,
+              width: K.width,
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: _controller.labels.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (ctx, index) => Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Obx(
+                      () => Buttons(
+                        label: _controller.labels[index],
+                        color: _controller.selectedIndex.value == index
+                            ? K.whiteColor
+                            : K.mainColor,
+                        colorText: _controller.selectedIndex.value == index
+                            ? K.mainColor
+                            : K.whiteColor,
+                        onTap: () {
+                          _controller.selected(index);
+                        },
+                      ),
+                    )),
+              ),
+            ),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 1,
+                crossAxisSpacing: 0,
+                // mainAxisExtent: 400,
+                childAspectRatio: MediaQuery.of(context).size.width /
+                    (MediaQuery.of(context).size.height / 1.2),
+              ),
+              itemCount: _controller.productsText.length,
+              itemBuilder: (BuildContext context, int index) => ProductCard(
+                label: _controller.productsText[index],
+                onTap: () {
+                  Get.toNamed(AppRoutes.productDetailsScreen);
+                },
+                price: ' \$52.00',
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
