@@ -1,13 +1,16 @@
 import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
-import 'package:apex/screens/cart_screen.dart';
+import 'package:apex/screens/checkout_screens/cart_screen.dart';
+import 'package:apex/screens/checkout_screens/pyment_screen.dart';
+import 'package:apex/screens/profile_screen.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get.dart';
 
-import '../constant.dart';
+import '../../constant.dart';
+import 'confirmation_bill.dart';
 
 class CheckOutScreen extends StatelessWidget {
   CustomAppBar customAppBar = CustomAppBar(onPressed: () {}, actions: [],);
@@ -15,8 +18,7 @@ class CheckOutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {Get.back();}, actions: [
-      ],),
+        onPressed: () {Get.back();}, actions: [],),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 20.0, top: 15.0, right: 20.0),
@@ -50,7 +52,9 @@ class CheckOutScreen extends StatelessWidget {
                                   K.sizedBoxH,
                                   const Text('Shipping Information', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
                                   K.sizedBoxH,
-                                  Wrap(children: [Icon(EvaIcons.personOutline, color: Colors.black.withOpacity(.7), size: 25,),
+                                  Wrap(children: [InkWell(child: Icon(EvaIcons.personOutline, color: Colors.black.withOpacity(.7), size: 25,),
+                                    onTap: (){Get.to(ProfileScreen());},
+                                  ),
                                       K.sizedBoxW,
                                       Text('Cameron Williamson', style: TextStyle(color: Colors.black.withOpacity(.7), fontSize: 18, fontWeight: FontWeight.w500,))
                                     ],
@@ -110,7 +114,9 @@ class CheckOutScreen extends StatelessWidget {
                       child: FlatButton(
                         color: K.mainColor,
                         shape: CircleBorder(),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(ProfileScreen());
+                        },
                         child: const Icon(
                           EvaIcons.edit2Outline,
                           color: Colors.white,
@@ -205,8 +211,12 @@ class CheckOutScreen extends StatelessWidget {
                       top: -6,
                       child: FlatButton(
                         color: K.borderColor,
-                        shape: CircleBorder(),
-                        onPressed: () {},
+                        shape: const CircleBorder(),
+                        onPressed: () {
+                          onPressed: () {
+                            Get.to(PaymentScreen());
+                          };
+                        },
                         child: const Icon(
                           EvaIcons.edit2Outline,
                           color: Colors.black,
@@ -222,20 +232,9 @@ class CheckOutScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        Text(
-                          'Sub Total',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Text(
-                          '\$360.00',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                              color: K.mainColor),
-                        ),
+                        Text('Sub Total', style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18,),),
+                        Text('\$360.00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: K.mainColor),),
                       ],
                     ),
                     Row(
@@ -254,8 +253,8 @@ class CheckOutScreen extends StatelessWidget {
                   ],
                 ),
                 Center(
-                  child: AddButton(text: 'Place Order', onPressed: () {Get.to(CheckOutScreen());},),),
-              ]
+                  child: AddButton(text: 'Place Order', onPressed: () {Get.to(ConfirmationBill());},),),
+              ],
           ),
         ),
       ),

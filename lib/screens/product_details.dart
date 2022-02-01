@@ -17,18 +17,7 @@ class ProductDetails extends StatelessWidget {
     return Scaffold(
         appBar: CustomAppBar(onPressed: () {  }, actions: [], ),
 
-        // appBar: AppBar(
-      //   backgroundColor: K.whiteColor,
-      //   elevation: 0,
-      //   leading: IconButton(
-      //     onPressed: () {},
-      //     icon: const Icon(
-      //       Icons.arrow_back_ios_new_outlined,
-      //       color: K.blackColor,
-      //     ),
-      //   ),
-      // ),
-      body: SingleChildScrollView(
+       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,15 +27,15 @@ class ProductDetails extends StatelessWidget {
         CarouselSlider(
 
         options: CarouselOptions(
-          height: 400,
+          height: 500,
           viewportFraction: 1,
         ),
         items: imagesList
             .map(
               (item) => ClipRRect(
-                    borderRadius:  BorderRadius.only(bottomRight: Radius.circular(40),bottomLeft: Radius.circular(40),),
+                    borderRadius:  const BorderRadius.only(bottomRight: Radius.circular(40),bottomLeft: Radius.circular(40),),
                     child: Image.network(item,
-                fit: BoxFit.fill,width: double.infinity,
+                fit: BoxFit.cover,width: double.infinity,
               ),
             ),
 
@@ -218,11 +207,11 @@ class ProductDetails extends StatelessWidget {
                     ],
                   ),
               K.sizedBoxH,
-
                 ],
               ),
             ),
-            Center(child: AddButton(text: 'Add to cart',))
+            Center(
+              child: AddButton(text: 'Add to cart',onPressed: (){},),),
           ],
         ),
      )

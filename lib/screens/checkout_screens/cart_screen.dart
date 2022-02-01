@@ -1,12 +1,13 @@
 import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
-import 'package:apex/screens/checkout_screen.dart';
+import 'package:apex/screens/checkout_screens/checkout_screen.dart';
+import 'package:apex/screens/order_screens/address_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import '../constant.dart';
+import '../../constant.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class CartScreen extends StatelessWidget {
@@ -140,7 +141,7 @@ class CartScreen extends StatelessWidget {
                 ],
               ),
               Center(
-                child: AddButton(text: 'Proceed To Checkout',onPressed: (){Get.to(CheckOutScreen());},),),
+                child: AddButton(text: 'Proceed To Checkout',onPressed: (){Get.to(AddressScreen());},),),
             ],
           ),
         ),

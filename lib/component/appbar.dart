@@ -1,3 +1,4 @@
+import 'package:apex/screens/checkout_screens/cart_screen.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -36,20 +37,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           color: K.blackColor,
         ),
       ),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: IconButton(
-            // Use the EvaIcons class for the IconData
-              icon: const Icon(
-                EvaIcons.shoppingCartOutline,
-                color: Colors.black,
-                size: 30,
-              ),
-              onPressed: () {}),
-        ),
-        K.sizedBoxW,
-      ],
+      actions: actions,
+    //   [
+    //     IconButton(onPressed: (){}, icon: Icon(Icons.favorite_outline,color: Colors.black,size: 28,),),
+    //     IconButton(onPressed: () {}, icon: IconButton(icon: const Icon(EvaIcons.shoppingCartOutline, color: Colors.black, size: 30,), onPressed: () {Get.to(CartScreen());}),),
+    // K.sizedBoxW,
+    //   ],
     );
   }
 }

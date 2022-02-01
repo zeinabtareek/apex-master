@@ -80,7 +80,7 @@ class LoginScreen extends StatelessWidget {
               leftLabel: "Don't have an account?",
               rightLabel: "Register",
               onTab: () {
-                Get.toNamed(AppRoutes.registerScreen);
+                Get.to(RegisterScreen());
               },
             ),
           ],

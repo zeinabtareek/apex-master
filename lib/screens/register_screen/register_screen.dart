@@ -3,6 +3,7 @@ import 'package:apex/component/register_button.dart';
 import 'package:apex/component/rich_text.dart';
 import 'package:apex/component/text_field.dart';
 import 'package:apex/routes/app_route.dart';
+import 'package:apex/screens/products_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -55,7 +56,9 @@ class RegisterScreen extends StatelessWidget {
             box(),
             RegisterButton(
               key: key,
-              function: () {},
+              function: () {
+                Get.to(ProductsScreen());
+              },
               label: "Register",
             ),
             box(),

@@ -39,8 +39,11 @@ dependencies:
   carousel_slider: ^4.0.0
   smooth_page_indicator: ^1.0.0+2
   eva_icons_flutter: ^3.0.2
-#  flutter_slidable: ^1.2.0
+  flutter_rating_bar: ^4.0.0
   flutter_slidable: ^0.6.0-nullsafety.0
+  google_fonts: ^2.2.0
+  step_progress_indicator: ^1.0.2
+
 
 dev_dependencies:
   flutter_test:
@@ -86,6 +89,7 @@ flutter:
     - family: Poppins-Bold
       fonts:
           - asset: assets/fonts/Poppins-Bold.ttf
+
 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
