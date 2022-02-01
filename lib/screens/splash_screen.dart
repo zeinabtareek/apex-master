@@ -39,7 +39,7 @@ class SplashScreen extends StatelessWidget {
         splashIconSize: 250,
         duration: 4000,
         splashTransition: SplashTransition.scaleTransition,
-        animationDuration: Duration(seconds: 1),
+        animationDuration: const Duration(seconds: 1),
 
 
       ),
