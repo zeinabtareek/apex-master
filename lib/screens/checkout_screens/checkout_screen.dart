@@ -1,6 +1,6 @@
 import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
-import 'package:apex/screens/checkout_screens/cart_screen.dart';
+import 'package:apex/screens/cart_screen/cart_screen.dart';
 import 'package:apex/screens/checkout_screens/pyment_screen.dart';
 import 'package:apex/screens/profile_screen.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';

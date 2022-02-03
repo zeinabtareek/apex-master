@@ -5,13 +5,20 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard(
-      {Key? key, this.onTap, this.label, this.price, this.favouriteFun,this.iconData})
+      {Key? key,
+      this.onTap,
+      this.label,
+      this.price,
+      this.favouriteFun,
+      this.iconData,
+      this.images})
       : super(key: key);
   final Function()? onTap;
   final String? label;
   final String? price;
   final Function()? favouriteFun;
   final IconData? iconData;
+  final String? images;
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +40,15 @@ class ProductCard extends StatelessWidget {
               flex: 2,
               child: Stack(
                 children: [
-                  Image.asset(
-                    "assets/images/kit.jpg",
+                  Image.network(
+                    images!,
                     fit: BoxFit.cover,
                     width: double.infinity,
                   ),
                   Positioned(
                     child: IconButton(
-                      onPressed:favouriteFun,
-                      icon:  Icon(
+                      onPressed: favouriteFun,
+                      icon: Icon(
                         iconData,
                         size: 25,
                         color: K.grayColor,
