@@ -4,6 +4,7 @@ import 'package:apex/component/rich_text.dart';
 import 'package:apex/component/text_field.dart';
 import 'package:apex/constant.dart';
 import 'package:apex/routes/app_route.dart';
+import 'package:apex/screens/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -77,7 +78,7 @@ class LoginScreen extends StatelessWidget {
               leftLabel: "Don't have an account?",
               rightLabel: "Register",
               onTab: () {
-                Get.toNamed(AppRoutes.registerScreen);
+                Get.to(()=>const RegisterScreen());
               },
             ),
           ],

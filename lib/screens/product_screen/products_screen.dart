@@ -2,7 +2,7 @@ import 'package:apex/component/appbar.dart';
 import 'package:apex/component/buttons_product_screen.dart';
 import 'package:apex/component/card_products_screen.dart';
 import 'package:apex/routes/app_route.dart';
-import 'package:apex/screens/product_details/controller/product_details_controller.dart';
+import 'package:apex/screens/product_screen/controller/product_details_controller.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,14 +18,6 @@ class ProductsScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.favorite_outline,
-              color: K.grayColor,
-              size: 28,
-            ),
-          ),
           IconButton(
               icon: const Icon(
                 EvaIcons.shoppingCartOutline,
@@ -86,14 +78,20 @@ class ProductsScreen extends StatelessWidget {
                     (MediaQuery.of(context).size.height / 1.2),
               ),
               itemCount: _controller.productsText.length,
-              itemBuilder: (BuildContext context, int index) => ProductCard(
+              itemBuilder: (BuildContext context, int index) =>Obx(()=> ProductCard(
+                favouriteFun: () {
+                  _controller.checkFun();
+                },
+                iconData: _controller.check.value
+                    ? Icons.favorite
+                    : Icons.favorite_border,
                 label: _controller.productsText[index],
                 onTap: () {
                   Get.toNamed(AppRoutes.productDetailsScreen);
                 },
                 price: ' \$52.00',
               ),
-            ),
+              )),
           ],
         ),
       ),

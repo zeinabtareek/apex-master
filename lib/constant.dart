@@ -12,7 +12,7 @@ class K {
   static final height = Get.height;
 
   static const sizedBoxH = SizedBox(
-    height: 22,
+    height: 15,
   );
   static const sizedBoxW = SizedBox(
     width: 22,

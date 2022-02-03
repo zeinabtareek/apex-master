@@ -1,25 +1,40 @@
 import 'package:apex/controller/base_controller.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProductScreenController extends BaseController {
-  final List<String> labels = ['see all', 'Bags', 'Women fashion', 'shoes'];
-  final List<String> productsText=[
-    'Classic Hoodie',
-    'Jordan 5 Retro',
-    'Buffalo Aspha Rld',
-    'Fila Bijou -Women Dresses',
-    'adidas Originals Relaxed Risque Lightweight',
-    'Nike Bags -Unisex Bags',
-    // 'Jordan Flightclub \'91',
-    // 'Nike Newborn Coverall ',
-    // 'adidas Originals',
-    // ' Jordan Sky - Baby Shoes',
-    // 'adidas Backpack',
-    // 'Nike Futura 365 Mini Backpack',
-  ];
-  final selectedIndex = 0.obs;
+class ProductDetailsController extends BaseController {
+  final boardController = PageController();
+  final isLast = false.obs;
+  final isFirst = true.obs;
+  final List<String> labels = [
+    'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-standard_view.jpg',
+    'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-side_view.jpg',
+    'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-back_view.jpg',
+    'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-detail_view_1.jpg',
+    'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-detail_view_2.jpg',
+    'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-detail_view_3.jpg',
 
-  selected(int index) {
-    selectedIndex.value = index;
+  ];
+
+  isLastFunction(int index) {
+    if (index == labels.length - 1) {
+      isLast.value = true;
+    } else {
+      isLast.value = false;
+    }
+  }
+
+  isFirstFunction(int index) {
+    if (index == labels.length - 4) {
+      isFirst.value = true;
+    } else {
+      isFirst.value = false;
+    }
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    isFirstFunction(0);
   }
 }

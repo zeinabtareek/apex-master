@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({Key? key, this.onTap, this.label, this.price})
+  const ProductCard(
+      {Key? key, this.onTap, this.label, this.price, this.favouriteFun,this.iconData})
       : super(key: key);
   final Function()? onTap;
   final String? label;
   final String? price;
+  final Function()? favouriteFun;
+  final IconData? iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +38,14 @@ class ProductCard extends StatelessWidget {
                     fit: BoxFit.cover,
                     width: double.infinity,
                   ),
-                  const Positioned(
-                    child: Icon(
-                      Icons.favorite_border,
-                      size: 25,
-                      color: K.grayColor,
+                  Positioned(
+                    child: IconButton(
+                      onPressed:favouriteFun,
+                      icon:  Icon(
+                        iconData,
+                        size: 25,
+                        color: K.grayColor,
+                      ),
                     ),
                     top: 10,
                     right: 4,
