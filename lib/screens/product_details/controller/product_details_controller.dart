@@ -6,6 +6,7 @@ class ProductDetailsController extends BaseController {
   final boardController = PageController();
   final isLast = false.obs;
   final isFirst = true.obs;
+  final check = false.obs;
   final List<String> labels = [
     'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-standard_view.jpg',
     'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-side_view.jpg',
@@ -13,7 +14,6 @@ class ProductDetailsController extends BaseController {
     'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-detail_view_1.jpg',
     'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-detail_view_2.jpg',
     'https://marcqa.com/wp-content/uploads/2022/01/z-HC2027-on_model-detail_view_3.jpg',
-
   ];
 
   isLastFunction(int index) {
@@ -30,6 +30,10 @@ class ProductDetailsController extends BaseController {
     } else {
       isFirst.value = false;
     }
+  }
+
+  checkFun() {
+    check.value = !check.value;
   }
 
   @override

@@ -4,31 +4,29 @@ import 'package:flutter/material.dart';
 import '../constant.dart';
 
 class AddButton extends StatelessWidget {
-  String ? text;
+  final String? text;
   final Function()? onPressed;
 
-  AddButton({Key? key,
-    required this.text,
-    this.onPressed
-  }) : super(key: key);
+  const AddButton({Key? key, this.text, this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child:  Text(text!,
+      child: Text(
+        text!,
         style: const TextStyle(
           color: K.whiteColor,
           fontSize: 16,
-          fontFamily: "Poppins SemiBold",
+          fontFamily: "Poppins-Bold",
         ),
       ),
       style: ElevatedButton.styleFrom(
           fixedSize: const Size(290, 40),
-          primary:K.mainColor,
+          primary: K.mainColor,
           // primary:Color(0xFFF5F5F5),
           shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
     );
   }
 }

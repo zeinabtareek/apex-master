@@ -1,6 +1,7 @@
 import 'package:apex/component/appbar.dart';
 import 'package:apex/component/buttons_product_screen.dart';
 import 'package:apex/component/card_products_screen.dart';
+import 'package:apex/data.dart';
 import 'package:apex/routes/app_route.dart';
 import 'package:apex/screens/product_screen/controller/product_details_controller.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
@@ -73,7 +74,6 @@ class ProductsScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 1,
                 crossAxisSpacing: 0,
-                // mainAxisExtent: 400,
                 childAspectRatio: MediaQuery.of(context).size.width /
                     (MediaQuery.of(context).size.height / 1.2),
               ),
@@ -82,6 +82,7 @@ class ProductsScreen extends StatelessWidget {
                 favouriteFun: () {
                   _controller.checkFun();
                 },
+                images: productsImage[index],
                 iconData: _controller.check.value
                     ? Icons.favorite
                     : Icons.favorite_border,

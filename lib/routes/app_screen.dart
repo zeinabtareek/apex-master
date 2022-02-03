@@ -1,5 +1,5 @@
 import 'package:apex/routes/app_route.dart';
-import 'package:apex/screens/checkout_screens/cart_screen.dart';
+import 'package:apex/screens/cart_screen/cart_screen.dart';
 import 'package:apex/screens/login_screen/login_screen.dart';
 import 'package:apex/screens/product_details/product_details.dart';
 import 'package:apex/screens/product_screen/products_screen.dart';

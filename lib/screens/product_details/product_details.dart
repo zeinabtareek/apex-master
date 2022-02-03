@@ -1,10 +1,10 @@
 import 'package:apex/component/add_button.dart';
+import 'package:apex/component/container_colors.dart';
+import 'package:apex/component/indicator.dart';
 import 'package:apex/constant.dart';
 import 'package:apex/screens/product_details/controller/product_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../data.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({Key? key}) : super(key: key);
@@ -15,12 +15,12 @@ class ProductDetails extends StatelessWidget {
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          K.sizedBoxH,
           SizedBox(
             width: K.width,
-            height: K.height/1.5,
+            height: K.height / 1.5,
             child: Stack(
               children: [
                 PageView.builder(
@@ -38,20 +38,9 @@ class ProductDetails extends StatelessWidget {
                     controller.isLastFunction(index);
                   },
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: SmoothPageIndicator(
-                      controller: controller.boardController,
-                      count: controller.labels.length,
-                      effect: const WormEffect(
-                          dotHeight: 10,
-                          dotWidth: 13,
-                          activeDotColor: K.mainColor,
-                          dotColor: K.whiteColor), // your preferred effect
-                    ),
-                  ),
+                Indicator(
+                  pageController: controller.boardController,
+                  count: controller.labels.length,
                 ),
               ],
             ),
@@ -90,16 +79,25 @@ class ProductDetails extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      children: const [
-                        Icon(
+                      children: [
+                        const Icon(
                           Icons.share,
                           color: K.grayColor,
                         ),
                         K.sizedBoxW,
-                        Icon(
-                          Icons.favorite_border_outlined,
-                          color: K.grayColor,
-                        ),
+                        Obx(() => IconButton(
+                            onPressed: () {
+                              controller.checkFun();
+                            },
+                            icon: controller.check.value
+                                ? const Icon(
+                                    Icons.favorite,
+                                    color: K.redColor,
+                                  )
+                                : const Icon(
+                                    Icons.favorite_border_outlined,
+                                    color: K.grayColor,
+                                  )))
                       ],
                     ),
                   ],
@@ -150,30 +148,12 @@ class ProductDetails extends StatelessWidget {
                           SizedBox(
                             height: 25,
                             child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              shrinkWrap: true,
-                              itemCount: 4,
-                              itemBuilder: (ctx, index) => Padding(
-                                padding: const EdgeInsets.all(2),
-                                child: Container(
-                                  height: 20,
-                                  width: 20,
-                                  decoration: BoxDecoration(
-                                    color: ColosList[index],
-                                    borderRadius: BorderRadius.circular(100.0),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 4.0,
-                                        spreadRadius: 0.0,
-                                        offset: Offset(.5,
-                                            .5), // shadow direction: bottom right
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
+                                scrollDirection: Axis.horizontal,
+                                shrinkWrap: true,
+                                itemCount: 4,
+                                itemBuilder: (ctx, index) => ContainerColors(
+                                      color: K.colorList[index],
+                                    )),
                           ),
                         ])
                       ],
@@ -206,11 +186,9 @@ class ProductDetails extends StatelessWidget {
               ],
             ),
           ),
-          Center(
-            child: AddButton(
-              text: 'Add to cart',
-              onPressed: () {},
-            ),
+          AddButton(
+            text: 'Add to cart',
+            onPressed: () {},
           ),
         ],
       ),

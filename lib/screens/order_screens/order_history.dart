@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../constant.dart';
-import '../checkout_screens/cart_screen.dart';
+import '../cart_screen/cart_screen.dart';
 
 class OrderHistory extends StatelessWidget {
   const OrderHistory({Key? key}) : super(key: key);

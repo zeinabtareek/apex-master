@@ -8,6 +8,7 @@ class K {
   static const borderColor = Color(0xFFF0E5CF);
   static const cardColor = Color(0xFF082032);
   static const whiteColor = Colors.white;
+  static const redColor = Color(0xfffd0503);
   static final width = Get.width;
   static final height = Get.height;
 
@@ -17,4 +18,10 @@ class K {
   static const sizedBoxW = SizedBox(
     width: 22,
   );
+  static const List<Color> colorList = [
+    K.whiteColor,
+    K.blackColor,
+    Colors.purpleAccent,
+    K.grayColor,
+  ];
 }
