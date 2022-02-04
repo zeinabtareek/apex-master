@@ -20,7 +20,7 @@ class ProductDetails extends StatelessWidget {
           K.sizedBoxH,
           SizedBox(
             width: K.width,
-            height: K.height / 1.5,
+            height: K.height / 1.75,
             child: Stack(
               children: [
                 PageView.builder(
@@ -190,6 +190,7 @@ class ProductDetails extends StatelessWidget {
             text: 'Add to cart',
             onPressed: () {},
           ),
+          K.sizedBoxH
         ],
       ),
     ));

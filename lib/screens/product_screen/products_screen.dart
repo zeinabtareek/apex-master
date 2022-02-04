@@ -28,6 +28,7 @@ class ProductsScreen extends StatelessWidget {
               onPressed: () {
                 Get.toNamed(AppRoutes.cartScreen);
               }),
+          K.sizedBoxW
         ],
       ),
       body: SingleChildScrollView(
@@ -67,32 +68,36 @@ class ProductsScreen extends StatelessWidget {
                     )),
               ),
             ),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const ClampingScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 1,
-                crossAxisSpacing: 0,
-                childAspectRatio: MediaQuery.of(context).size.width /
-                    (MediaQuery.of(context).size.height / 1.2),
-              ),
-              itemCount: _controller.productsText.length,
-              itemBuilder: (BuildContext context, int index) =>Obx(()=> ProductCard(
-                favouriteFun: () {
-                  _controller.checkFun();
-                },
-                images: productsImage[index],
-                iconData: _controller.check.value
-                    ? Icons.favorite
-                    : Icons.favorite_border,
-                label: _controller.productsText[index],
-                onTap: () {
-                  Get.toNamed(AppRoutes.productDetailsScreen);
-                },
-                price: ' \$52.00',
-              ),
-              )),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const ClampingScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 1,
+                    crossAxisSpacing: 0,
+                    childAspectRatio: MediaQuery.of(context).size.width /
+                        (MediaQuery.of(context).size.height / 1.5),
+                  ),
+                  itemCount: _controller.productsText.length,
+                  itemBuilder: (BuildContext context, int index) => Obx(
+                        () => ProductCard(
+                          favouriteFun: () {
+                            _controller.checkFun();
+                          },
+                          images: productsImage[index],
+                          iconData: _controller.check.value
+                              ? Icons.favorite
+                              : Icons.favorite_border,
+                          label: _controller.productsText[index],
+                          onTap: () {
+                            Get.toNamed(AppRoutes.productDetailsScreen);
+                          },
+                          price: ' \$52.00',
+                        ),
+                      )),
+            ),
           ],
         ),
       ),
