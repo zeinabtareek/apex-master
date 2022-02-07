@@ -8,8 +8,6 @@ import 'package:apex/screens/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../product_details.dart';
-
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -80,7 +78,7 @@ class LoginScreen extends StatelessWidget {
               leftLabel: "Don't have an account?",
               rightLabel: "Register",
               onTab: () {
-                Get.to(RegisterScreen());
+                Get.to(()=>const RegisterScreen());
               },
             ),
           ],

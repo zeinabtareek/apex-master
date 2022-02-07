@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../constant.dart';
-import 'cart_screen.dart';
+import '../cart_screen/cart_screen.dart';
 import 'checkout_screen.dart';
 
 class PaymentScreen extends StatelessWidget {
@@ -17,9 +17,7 @@ class PaymentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {
-          Get.back();
-        },
+
         actions: [
           IconButton(
             onPressed: () {},

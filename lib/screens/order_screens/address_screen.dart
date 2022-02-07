@@ -9,15 +9,15 @@ import 'package:get/get.dart';
 import '../../constant.dart';
 
 class AddressScreen extends StatelessWidget {
-  TextEditingController categoryController = TextEditingController();
+  final categoryController = TextEditingController();
+
+  AddressScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {
-          Get.back();
-        },
+
         actions: [
           IconButton(
             onPressed: () {},

@@ -4,22 +4,19 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'checkout_screens/cart_screen.dart';
 import 'checkout_screens/pyment_screen.dart';
 import 'order_screens/address_screen.dart';
 import 'order_screens/order_history.dart';
 
 class ProfileScreen extends StatelessWidget {
-   ProfileScreen({Key? key}) : super(key: key);
-  CustomAppBar customAppBar = CustomAppBar(onPressed: () {}, actions: [],);
+   const ProfileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: CustomAppBar(
-        onPressed: () {Get.back();}, actions: [],),
+      appBar: const CustomAppBar(
+         actions: [],),
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration:  const BoxDecoration(

@@ -14,15 +14,18 @@ class OrderDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {
-          Get.back();},
-        actions: [  IconButton(
+
+        actions: [
+          IconButton(
             onPressed: () {},
             icon: const Icon(
               Icons.favorite_outline,
               color: Colors.black,
               size: 28,
-            ),),K.sizedBoxW,  ],
+            ),
+          ),
+          K.sizedBoxW,
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -33,7 +36,8 @@ class OrderDetails extends StatelessWidget {
               children:  [
                 const Text(
                   'Order No. #15252',
-                  style: TextStyle(fontSize: 20),),
+                  style: TextStyle(fontSize: 20),
+                ),
                 K.sizedBoxH,
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
@@ -64,8 +68,18 @@ class OrderDetails extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children:  [
-                          Text(  'Subtotal',  style: GoogleFonts.aBeeZee(  textStyle: TextStyle(color: K.blackColor),),),
-                          const Text( '\$360.00', style: TextStyle( fontSize: 15,  color: K.blackColor, ),),
+                          Text(
+                            'Subtotal',
+                            style: GoogleFonts.aBeeZee(
+                              textStyle: TextStyle(color: K.blackColor),
+                            ),
+                          ),
+                          const Text(
+                            '\$360.00',
+                            style: TextStyle(
+                                fontSize: 15,
+                                color: K.blackColor),
+                          ),
                         ],
                       ),
                       Row(
@@ -80,9 +94,7 @@ class OrderDetails extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 15,
                                   color: K.blackColor,
-                                  height: 2,
-                              ),
-                          ),
+                                  height: 2)),
                         ],
                       ),
                       Row(
@@ -93,10 +105,18 @@ class OrderDetails extends StatelessWidget {
                             style: GoogleFonts.aBeeZee(
                               textStyle: const TextStyle(color: K.blackColor,
                                 fontWeight: FontWeight.bold,
-                               ),
-                             ),
+
+                              ),
                             ),
-                          const Text( '\$400.00', style: TextStyle( fontWeight: FontWeight.bold, fontSize: 16, color: K.blackColor,   height: 3,),),
+                            ),
+                          const Text(
+                            '\$400.00',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: K.blackColor,
+                                height: 3),
+                          ),
                         ],
                       ),
                     ],
@@ -111,7 +131,14 @@ class OrderDetails extends StatelessWidget {
                   ],
                 ),
                 K.sizedBoxH,
-                const StepProgressIndicator(  totalSteps: 5,   currentStep: 2, selectedColor: K.mainColor, unselectedColor: K.grayColor,),
+
+                const StepProgressIndicator(
+                  totalSteps: 5,
+                  currentStep: 2,
+                  selectedColor: K.mainColor,
+                  unselectedColor: K.grayColor,
+                ),
+
                 K.sizedBoxH,
                 const Text('Shipping Address',style: TextStyle(color: K.blackColor,fontSize: 18 ,fontWeight: FontWeight.bold),),
                 const Text('128 trandonSt ,london ,Mit ',style: TextStyle(color: K.grayColor,fontSize: 14 ,fontWeight: FontWeight.normal ,height: 2),),

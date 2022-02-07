@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../constant.dart';
-import '../checkout_screens/cart_screen.dart';
+import '../cart_screen/cart_screen.dart';
 
 class OrderHistory extends StatelessWidget {
   const OrderHistory({Key? key}) : super(key: key);
@@ -15,8 +15,8 @@ class OrderHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {Get.back();}, actions: [
-        IconButton(onPressed: (){}, icon: Icon(Icons.favorite_outline,color: Colors.black,size: 28,),),
+         actions: [
+        IconButton(onPressed: (){}, icon: const Icon(Icons.favorite_outline,color: Colors.black,size: 28,),),
         IconButton(onPressed: () {}, icon: IconButton(icon: const Icon(EvaIcons.shoppingCartOutline, color: Colors.black, size: 30,), onPressed: () {Get.to(CartScreen());}),),
         K.sizedBoxW,
       ],),

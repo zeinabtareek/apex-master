@@ -17,7 +17,7 @@ class ConfirmationBill extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {Get.back();}, actions: [
+         actions: [
           IconButton(onPressed: () {}, icon: IconButton(icon: const Icon(EvaIcons.homeOutline, color: Colors.black, size: 25,), onPressed: () {}),),
           K.sizedBoxW,
           ],),

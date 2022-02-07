@@ -1,31 +1,28 @@
-import 'package:apex/screens/checkout_screens/cart_screen.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../constant.dart';
 
-
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final VoidCallback onPressed;
-  List<Widget> actions = [];
+  final List<Widget>? actions;
+  final String? label;
 
+  const CustomAppBar({Key? key, this.actions, this.label = ''})
+      : super(key: key);
 
-
-  CustomAppBar({
-    Key? key,
-    required this.onPressed,
-    required this.actions ,
-
-  }) : super(key: key);
-  GlobalKey<ScaffoldState> ScaffoldKey = new GlobalKey<ScaffoldState>();
-
-  Size get preferredSize => const Size.fromHeight(60);
+  @override
+  Size get preferredSize => const Size.fromHeight(50);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      title: Text(
+        label!,
+        style: const TextStyle(
+            fontSize: 24, fontWeight: FontWeight.bold, color: K.blackColor),
+      ),
+      centerTitle: true,
       backgroundColor: K.whiteColor,
       elevation: 0,
       leading: IconButton(
@@ -38,11 +35,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: actions,
-    //   [
-    //     IconButton(onPressed: (){}, icon: Icon(Icons.favorite_outline,color: Colors.black,size: 28,),),
-    //     IconButton(onPressed: () {}, icon: IconButton(icon: const Icon(EvaIcons.shoppingCartOutline, color: Colors.black, size: 30,), onPressed: () {Get.to(CartScreen());}),),
-    // K.sizedBoxW,
-    //   ],
     );
   }
 }
