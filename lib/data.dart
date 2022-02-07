@@ -28,10 +28,4 @@ final List<String> productsText = [
   'Fila Bijou -Women Dresses',
   'adidas Originals Relaxed Risque Lightweight',
   'Nike Bags -Unisex Bags',
-  // 'Jordan Flightclub \'91',
-  // 'Nike Newborn Coverall ',
-  // 'adidas Originals',
-  // ' Jordan Sky - Baby Shoes',
-  // 'adidas Backpack',
-  // 'Nike Futura 365 Mini Backpack',
 ];

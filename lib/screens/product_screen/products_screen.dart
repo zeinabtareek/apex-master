@@ -65,7 +65,8 @@ class ProductsScreen extends StatelessWidget {
                           _controller.selected(index);
                         },
                       ),
-                    )),
+                    ),
+                ),
               ),
             ),
             Padding(
@@ -78,7 +79,7 @@ class ProductsScreen extends StatelessWidget {
                     mainAxisSpacing: 1,
                     crossAxisSpacing: 0,
                     childAspectRatio: MediaQuery.of(context).size.width /
-                        (MediaQuery.of(context).size.height / 1.5),
+                        (MediaQuery.of(context).size.height / 1.8),
                   ),
                   itemCount: _controller.productsText.length,
                   itemBuilder: (BuildContext context, int index) => Obx(
