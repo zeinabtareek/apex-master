@@ -1,5 +1,6 @@
 import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
+import 'package:apex/component/cart_container.dart';
 import 'package:apex/screens/order_screens/address_screen.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
@@ -34,106 +35,12 @@ class CartScreen extends StatelessWidget {
                   shrinkWrap: true,
                   physics: const ClampingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Dismissible(
-                          background: Container(
-                            color: K.whiteColor,
-                            child: const Center(
-                              child: Icon(
-                                EvaIcons.trash2,
-                                color: K.blackColor,
-                              ),
-                            ),
-                          ),
-                          key: UniqueKey(),
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            color: K.whiteColor,
-                            child: SizedBox(
-                              height: 135,
-                              width: K.width,
-                              child: Row(
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(10),
-                                        topLeft: Radius.circular(10),
-                                        bottomRight: Radius.circular(2),
-                                        topRight: Radius.circular(2)),
-                                    clipBehavior: Clip.antiAlias,
-                                    child: Image.asset(
-                                      "assets/images/kit.jpg",
-                                      fit: BoxFit.cover,
-                                      width: 150,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        const Padding(
-                                          padding: EdgeInsets.only(left: 20),
-                                          child: Text(
-                                            "Fashion",
-                                            style: TextStyle(
-                                                fontSize: 16,
-                                                color: K.blackColor,
-                                                fontFamily: "Poppins-Bold"),
-                                          ),
-                                        ),
-                                        const Padding(
-                                          padding:
-                                              EdgeInsets.only(left: 20, top: 10),
-                                          child: Text(
-                                            "\$250",
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                color: K.mainColor,
-                                                fontFamily: "Poppins-Bold"),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(top: 20),
-                                          child: Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              IconButton(
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                    Icons.remove_circle,
-                                                    size: 30,
-                                                    color: K.mainColor),
-                                              ),
-                                              const Text(
-                                                '2',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold),
-                                              ),
-                                              IconButton(
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                  Icons.add_circle,
-                                                  size: 30,
-                                                  color: K.mainColor,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          )),
+                    return Cart(
+                      price: "\$250",
+                      label: "Fashion",
+                      image: "assets/images/kit.jpg",
+                      decrease: (){},
+                      increase: (){},
                     );
                   }),
               Row(
