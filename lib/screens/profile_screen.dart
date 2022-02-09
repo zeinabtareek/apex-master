@@ -284,7 +284,7 @@ class ProfileScreen extends StatelessWidget {
                           children:  [
                             K.sizedBoxW,
                             Icon(Icons.logout),
-                             Text('Log Out', style: TextStyle(fontSize:6.sp),),
+                             Text('Log Out ', style: TextStyle(fontSize:6.sp),),
                             K.sizedBoxW,
                             Icon(Icons.arrow_forward_ios_rounded , size: 7.sp,),
                             K.sizedBoxW,
