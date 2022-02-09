@@ -7,6 +7,7 @@ import 'package:apex/screens/profile_screen.dart';
 import 'package:apex/screens/register_screen/register_screen.dart';
 import 'package:apex/screens/splash_screen.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppScreens {
   static final screens = [

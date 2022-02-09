@@ -4,6 +4,7 @@ import 'package:apex/component/text_field.dart';
 import 'package:apex/screens/checkout_screens/pyment_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../constant.dart';
@@ -21,19 +22,20 @@ class AddressScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon:  const Icon(
               Icons.favorite_outline,
               color: Colors.black,
-              size: 28,
             ),
           ),
-          K.sizedBoxW,
+          SizedBox(width: 6.w),
+
         ],
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
-          child: Form(child: Column(
+            padding: EdgeInsets.symmetric
+              (horizontal: 0.0.w ,vertical: 0.0.h),
+            child: Form(child: Column(
             children: [
               FixedTextField(key: key, label: "First name", function: (v) {},),
               FixedTextField(key: key, label: "Last name", function: (v) {},),

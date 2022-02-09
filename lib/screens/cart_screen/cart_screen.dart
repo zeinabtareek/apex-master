@@ -5,6 +5,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../constant.dart';
 
@@ -14,14 +15,14 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
+      appBar:  CustomAppBar(
         label: "Cart",
         actions: [
-          Icon(
+          const Icon(
             EvaIcons.shoppingCart,
             color: K.mainColor,
           ),
-          K.sizedBoxW,
+          SizedBox(width: 6.w),
         ],
       ),
       body: SingleChildScrollView(
@@ -52,7 +53,7 @@ class CartScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10)),
                             color: K.whiteColor,
                             child: SizedBox(
-                              height: 135,
+                              height: 180.h,
                               width: K.width,
                               child: Row(
                                 children: [
@@ -66,7 +67,7 @@ class CartScreen extends StatelessWidget {
                                     child: Image.asset(
                                       "assets/images/kit.jpg",
                                       fit: BoxFit.cover,
-                                      width: 150,
+                                      width: 50.w,
                                     ),
                                   ),
                                   Expanded(
@@ -75,57 +76,54 @@ class CartScreen extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const Padding(
+                                         Padding(
                                           padding: EdgeInsets.only(left: 20),
                                           child: Text(
                                             "Fashion",
                                             style: TextStyle(
-                                                fontSize: 16,
+                                                fontSize: 6.sp,
                                                 color: K.blackColor,
                                                 fontFamily: "Poppins-Bold"),
                                           ),
                                         ),
-                                        const Padding(
+                                         Padding(
                                           padding:
-                                              EdgeInsets.only(left: 20, top: 10),
+                                              EdgeInsets.only(left: 20,),
                                           child: Text(
                                             "\$250",
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 6.sp,
                                                 color: K.mainColor,
-                                                fontFamily: "Poppins-Bold"),
+                                                fontWeight: FontWeight.w400),
                                           ),
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(top: 20),
-                                          child: Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              IconButton(
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                    Icons.remove_circle,
-                                                    size: 30,
-                                                    color: K.mainColor),
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            IconButton(
+                                              onPressed: () {},
+                                              icon:  Icon(
+                                                  Icons.remove_circle,
+                                                  size: 10.w,
+                                                  color: K.mainColor),
+                                            ),
+                                            const Text(
+                                              '2',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            IconButton(
+                                              onPressed: () {},
+                                              icon:  Icon(
+                                                Icons.add_circle,
+                                                size: 10.w,
+                                                color: K.mainColor,
                                               ),
-                                              const Text(
-                                                '2',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold),
-                                              ),
-                                              IconButton(
-                                                onPressed: () {},
-                                                icon: const Icon(
-                                                  Icons.add_circle,
-                                                  size: 30,
-                                                  color: K.mainColor,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
@@ -136,60 +134,72 @@ class CartScreen extends StatelessWidget {
                           )),
                     );
                   }),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    'Sub Total',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+              Padding(
+                padding: EdgeInsets.symmetric
+                  (horizontal: 8.0.w ,vertical: 8.0.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:  [
+                    Text(
+                      'Sub Total',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 6.sp,
+                      ),
                     ),
-                  ),
-                  Text(
-                    '\$360.00',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        color: K.mainColor),
-                  ),
-                ],
+                    Text(
+                      '\$360.00',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 6.sp,
+                          color: K.mainColor),
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    'Shipping',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18, height: 2),
-                  ),
-                  Text(
-                    '\$40.00',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        color: K.mainColor,
-                        height: 2),
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric
+                  (horizontal: 8.0.w ,vertical: 8.0.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:  [
+                     Text(
+                      'Shipping',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                           fontSize: 6.sp,),
+                    ),
+                    Text(
+                      '\$40.00',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 6.sp,
+                          color: K.mainColor,
+                          ),
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    'Total',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20, height: 3),
-                  ),
-                  Text(
-                    '\$400.00',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: K.mainColor,
-                        height: 3),
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric
+                  (horizontal: 5.0.w ,vertical: 8.0.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:  [
+                    Text(
+                      'Total',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 8.sp,),
+                    ),
+                    Text(
+                      '\$400.00',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 6.sp,
+                          color: K.mainColor,),
+                    ),
+                  ],
+                ),
               ),
               AddButton(
                 text: 'Checkout',

@@ -4,6 +4,7 @@ import 'package:apex/component/rich_text.dart';
 import 'package:apex/component/text_field.dart';
 import 'package:apex/routes/app_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -16,15 +17,15 @@ class RegisterScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              width: Get.width,
-              height: Get.height * 0.2,
+              width: Get.width.w,
+              height: Get.height * 0.4.h,
               child: CustomPaint(
                 child:  Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 80,
-                    height: 50,
+                    width: 100.w,
+                    height: 80.h,
                     child: Image.asset("assets/images/logo.png"),
                   ),
                 ],
@@ -75,8 +76,8 @@ class RegisterScreen extends StatelessWidget {
     );
   }
   Widget box() {
-    return const SizedBox(
-      height: 40,
+    return  SizedBox(
+      height: 40.h,
     );
   }
 }

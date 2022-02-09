@@ -3,6 +3,7 @@ import 'package:apex/constant.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'checkout_screens/pyment_screen.dart';
 import 'order_screens/address_screen.dart';
@@ -13,42 +14,44 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: const CustomAppBar(
          actions: [],),
       body: Container(
-        height: MediaQuery.of(context).size.height,
+        height: height,
         decoration:  const BoxDecoration(
     image:   DecorationImage(
         image:ExactAssetImage('assets/images/netnetnet.jpeg',),
       fit: BoxFit.cover,    // -> 02
         ),
-
         ),
         child: SingleChildScrollView(
           child: Column(
-
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Stack(
                 children: [
                   AspectRatio(
-                      aspectRatio: (130 / 50),
+                      aspectRatio: (130 / 53),
                       child: Container()),
                   Positioned(
-                    top: 40,
+                    // top: 40,
+                    right: width * 0.35,
+                     top: height * 0.02,
                     bottom: 10,
-                    right: 150,
+                    // right: 150,
                     child: Stack(
                       children: [
-                         const CircleAvatar(
-                          radius: 70,
-                          backgroundColor: Colors.white70,
+                          CircleAvatar(
+                          radius: 66,
+                          backgroundColor: K.grayColor.withOpacity(.5),
                          child:  Padding(
-                           padding: EdgeInsets.all(8.0),
-                           child: CircleAvatar(
+                           padding: EdgeInsets.symmetric
+                             (horizontal: 3.0.w ,vertical: 3.0.h),
+                           child: const CircleAvatar(
                                  radius: 100 - 2 * 20,
                                  backgroundImage: NetworkImage(
                                      "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg")
@@ -58,12 +61,13 @@ class ProfileScreen extends StatelessWidget {
                         Positioned(
                           child: IconButton(
                               onPressed: () {},
-                              icon: const Icon(
+                              icon:  Icon(
                                 EvaIcons.camera,
-                                size: 30,
-                                color: K.whiteColor,
+                                size: 15.sp,
+                                color: K.mainColor,
                               )),
-                          top:70,
+                          // top:70,
+                          top: height * 0.1,
                           right: 0,
                         ),
                       ],
@@ -71,22 +75,25 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const Text('Caroline John',softWrap: true,style: TextStyle(
-                  color: K.whiteColor,
+               Text('Caroline John',softWrap: true,style: TextStyle(
+                  color: K.blackColor,
                   fontFamily: 'Poppins-Bold',
-                fontSize: 22
+                fontSize: 8.sp
                 ),
               ), Text('johnmatilda@gmail.com \n',softWrap: true,style: TextStyle(
-                  color: K.whiteColor.withOpacity(.8),
+                  color: K.grayColor.withOpacity(.4),
                 fontWeight: FontWeight.bold,
-                fontSize: 16
+                fontSize: 6.sp
                 ),
               ),
               Container(
-                height:MediaQuery.of(context).size.height,
+                height:height,
                   width: double.infinity,
-                  margin: const EdgeInsets.all(10),
-                  decoration:   BoxDecoration(
+                  margin:  EdgeInsets.symmetric
+                    (horizontal: 4.0.w ,),
+                padding: EdgeInsets.symmetric
+                  (horizontal: 1.0.w ,vertical: 30.0.h),
+                decoration:   BoxDecoration(
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.shade200,
@@ -103,10 +110,10 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children:  [
                     K.sizedBoxH,
-                    // K.sizedBoxH,
                     Container(
-                      margin: const EdgeInsets.only(left :11 ,right: 11),
-                      height: 80,
+                      margin: EdgeInsets.symmetric
+                        (horizontal: 2.0.w ,),
+                      height: 130.h,
                       child: GestureDetector(
                         onTap: (){
                           Get.to(OrderHistory());
@@ -123,17 +130,17 @@ class ProfileScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:  [
                               K.sizedBoxW,
-                              Icon(Icons.shopping_bag_outlined ,size: 30,),
+                              const Icon(Icons.shopping_bag_outlined  ),
                               Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children:   const [
+                                children:    [
                                   K.sizedBoxH,
-                                  Text('My Orders', maxLines: 1,style: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,height: 1),),
-                                  Text('Already have 12 orders', style: TextStyle(fontSize: 12,color: Colors.grey ,fontWeight: FontWeight.w600,height: 2),),
+                                  Text('My Orders', maxLines: 1,style: TextStyle(fontSize: 6.sp,fontWeight: FontWeight.w600,height: 1),),
+                                  Text('Already have 12 orders', style: TextStyle(fontSize: 5.sp,color: Colors.grey ,fontWeight: FontWeight.w600,height: 2),),
                                 ],
                               ),
-                              const Icon(Icons.arrow_forward_ios_rounded ,size: 20,),
+                               Icon(Icons.arrow_forward_ios_rounded ,size: 7.sp,),
                               K.sizedBoxW,
                             ],
                           ),
@@ -141,8 +148,9 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.all( 11),
-                      height: 80,
+                      margin: EdgeInsets.symmetric
+                        (horizontal: 2.0.w ,),
+                      height: 130.h,
                       child: GestureDetector(
                         onTap: (){Get.to(PaymentScreen());},
                         child: Card(
@@ -153,21 +161,21 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           elevation: 2,
                           child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children:  [
                              K.sizedBoxW,
-                              Icon(Icons.payment,size: 30,),
+                              Icon(Icons.payment ),
                             Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children:   const [
+                              children:    [
                                 K.sizedBoxH,
-                              Text('Payment Methods', style: TextStyle(fontSize: 17),),
-                                Text('Visa **43', style: TextStyle(fontSize: 12,color: Colors.grey ,fontWeight: FontWeight.w600,height: 2),),
+                              Text('Payment Methods', style: TextStyle(fontSize: 6.sp),),
+                                Text('Visa **43', style: TextStyle(fontSize:  5.sp,color: Colors.grey ,fontWeight: FontWeight.w600,height: 2),),
 
                               ]),
-                              Icon(Icons.arrow_forward_ios_rounded ,size: 20,),
+                              Icon(Icons.arrow_forward_ios_rounded ,size: 7.sp,),
                               K.sizedBoxW,
                             ],
                           ),
@@ -175,9 +183,9 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(left :11 ,right: 11),
-                      height: 80,
-                      child: GestureDetector(
+                      margin: EdgeInsets.symmetric
+                        (horizontal: 2.0.w ,),
+                      height: 130.h, child: GestureDetector(
                         child: Card(
                           color: Colors.grey.shade200,
                           clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -186,21 +194,21 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           elevation: 2,
                           child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children:  [
                               K.sizedBoxW,
-                              Icon(Icons.share_location_outlined ,size: 32,),
+                              Icon(Icons.share_location_outlined  ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children:   const [
+                              children:    [
                                 K.sizedBoxH,
-                              Text('Shipping Addresses', style: TextStyle(fontSize: 17),),
-                              Text('3 addresses', style: TextStyle(fontSize: 12,color: Colors.grey ,fontWeight: FontWeight.w600,height: 2),),
+                              Text('Shipping Addresses', style: TextStyle(fontSize: 6.sp),),
+                              Text('3 addresses', style: TextStyle(fontSize:  5.sp,color: Colors.grey ,fontWeight: FontWeight.w600,height: 2),),
                               ],
                             ),
-                              Icon(Icons.arrow_forward_ios_rounded ,size: 20,),
+                              Icon(Icons.arrow_forward_ios_rounded ,size: 7.sp,),
                               K.sizedBoxW,
                             ],
                           ),
@@ -212,9 +220,9 @@ class ProfileScreen extends StatelessWidget {
                     ),
 
                     Container(
-                      margin: const EdgeInsets.only(left :11 ,right: 11),
-                      height: 70,
-                      child: Card(
+                      margin: EdgeInsets.symmetric
+                        (horizontal: 2.0.w ,),
+                      height: 120.h,   child: Card(
                         color: Colors.grey.shade200,
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         shape: RoundedRectangleBorder(
@@ -224,22 +232,22 @@ class ProfileScreen extends StatelessWidget {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
+                          children:  [
                             K.sizedBoxW,
-                            Icon(Icons.favorite_border_outlined ,size: 30,),
+                            const Icon(Icons.favorite_border_outlined , ),
+                            // K.sizedBoxW,
+                            Text('My Wishlist', style: TextStyle(fontSize:6.sp),),
                             K.sizedBoxW,
-                            Text('My Wishlist', style: TextStyle(fontSize: 17),),
-                            K.sizedBoxW,
-                            Icon(Icons.arrow_forward_ios_rounded ,size: 20,),
+                            Icon(Icons.arrow_forward_ios_rounded ,size: 7.sp,),
                             K.sizedBoxW,
                           ],
                         ),
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(left :11 ,right: 11),
-                      height: 70,
-                      child: Card(
+                      margin: EdgeInsets.symmetric
+                        (horizontal: 2.0.w ,),
+                      height: 120.h, child: Card(
                         color: Colors.grey.shade200,
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         shape: RoundedRectangleBorder(
@@ -249,21 +257,22 @@ class ProfileScreen extends StatelessWidget {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
+                          children:  [
                             K.sizedBoxW,
-                            Icon(Icons.lock_outline ,size: 30,),
-                            Text('Change Password', style: TextStyle(fontSize: 17),),
+                            Icon(Icons.lock_outline  ),
+
+                            Text('Change Password', style:  TextStyle(fontSize: 6.sp),),
                             K.sizedBoxW,
-                            Icon(Icons.arrow_forward_ios_rounded ,size: 20,),
+                            Icon(Icons.arrow_forward_ios_rounded ,size: 7.sp),
                             K.sizedBoxW,
                           ],
                         ),
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(left :11 ,right: 11),
-                      height: 65,
-                      child: Card(
+                      margin: EdgeInsets.symmetric
+                        (horizontal: 2.0.w ,),
+                      height: 100.h, child: Card(
                         color: Colors.grey.shade200,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
@@ -272,12 +281,12 @@ class ProfileScreen extends StatelessWidget {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children:  [
                             K.sizedBoxW,
                             Icon(Icons.logout),
-                            Text('Log Out', style: TextStyle(fontSize: 17),),
+                             Text('Log Out', style: TextStyle(fontSize:6.sp),),
                             K.sizedBoxW,
-                            Icon(Icons.arrow_forward_ios_rounded ,size: 20,),
+                            Icon(Icons.arrow_forward_ios_rounded , size: 7.sp,),
                             K.sizedBoxW,
                           ],
                         ),

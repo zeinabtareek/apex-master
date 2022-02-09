@@ -4,6 +4,8 @@ import 'package:apex/component/indicator.dart';
 import 'package:apex/constant.dart';
 import 'package:apex/screens/product_details/controller/product_details_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -17,20 +19,26 @@ class ProductDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          K.sizedBoxH,
           SizedBox(
-            width: K.width,
-            height: K.height / 1.75,
+            width: K.width.w,
+            height: MediaQuery.of(context).size.height/1.5,
+            // height: K.height / 3.h,
             child: Stack(
               children: [
                 PageView.builder(
                   controller: controller.boardController,
                   physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) => Image.network(
-                    controller.labels[index],
-                    height: double.infinity,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
+                  itemBuilder: (context, index) => ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      bottomRight: Radius.circular(25.0),
+                      bottomLeft: Radius.circular(25.0),
+                    ),
+                    child: Image.network(
+                      controller.labels[index],
+                      height: double.infinity,
+                      fit: BoxFit.fill,
+                      width: double.infinity,
+                    ),
                   ),
                   itemCount: controller.labels.length,
                   onPageChanged: (int index) {
@@ -46,7 +54,7 @@ class ProductDetails extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.symmetric(horizontal: 8.0.w ,vertical: 5.0.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,27 +63,34 @@ class ProductDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        const Text(
-                          'Classic Hoodie',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: K.blackColor,
-                            fontFamily: "Poppins-Bold",
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 6,
-                        ),
+                         Wrap(
+                           direction: Axis.vertical,
+                           spacing: .5,
+                           children: [
+                             Text(
+                              'Classic Hoodie',
+                              style: TextStyle(
+                                fontSize: 8.sp,
+                                color: K.blackColor,
+                                fontFamily: "Poppins-Bold",
+                              ),
+                        ),Text(
+                               'Boomboogie',
+                               style: TextStyle(
+                                 color: K.grayColor,
+                                 fontSize: 5.sp,
+                                 height: .99.h
+                               ),
+                             ),
+                           ],
+                         ),SizedBox(width: 4.w,),
                         const Icon(
                           Icons.star,
-                          // Icons.star_border_outlined,
                           color: Colors.amber,
-                          size: 18,
                         ),
-                        Text(' 4.7',
-                            style:
-                                TextStyle(color: Colors.black.withOpacity(.6))),
+                        Text(' 4.7', style: TextStyle(color: Colors.black.withOpacity(.6))),
                       ],
                     ),
                     Row(
@@ -84,7 +99,6 @@ class ProductDetails extends StatelessWidget {
                           Icons.share,
                           color: K.grayColor,
                         ),
-                        K.sizedBoxW,
                         Obx(() => IconButton(
                             onPressed: () {
                               controller.checkFun();
@@ -92,7 +106,7 @@ class ProductDetails extends StatelessWidget {
                             icon: controller.check.value
                                 ? const Icon(
                                     Icons.favorite,
-                                    color: K.redColor,
+                                    color: K.mainColor,
                                   )
                                 : const Icon(
                                     Icons.favorite_border_outlined,
@@ -102,29 +116,20 @@ class ProductDetails extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Text(
-                  'Boomboogie',
+                K.sizedBoxH,
+                Text(
+                  'Description\n',
                   style: TextStyle(
-                    color: K.grayColor,
-                    fontSize: 14,
-                  ),
+                      color: Colors.black.withOpacity(.6),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 6.sp),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Text(
-                    'Description\n',
-                    style: TextStyle(
-                        color: Colors.black.withOpacity(.6),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12),
-                  ),
-                ),
-                const Text(
+                 Text(
                   'The Under Armour Mens Rival Cotton Sweatshirt delivers comfortable, casual winter comfort. Constructed from mid-weight performance cotton a brushed fleece interior it delivers a warm and cosy fit that  sure to keep your body temps ',
-                  maxLines: 2,
+                  // maxLines: 4,
                   style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 5.sp,
+                    fontWeight: FontWeight.w600,
                     color: Colors.grey,
                   ),
                 ),
@@ -136,10 +141,10 @@ class ProductDetails extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                         Text(
                           'Colors',
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 6.sp,
                             color: Colors.grey,
                             fontFamily: "Poppins-Bold",
                           ),
@@ -161,11 +166,11 @@ class ProductDetails extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children:  [
                         Text(
                           'Price',
                           style: TextStyle(
-                            fontSize: 13,
+                            fontSize: 6.sp,
                             color: Colors.grey,
                             fontWeight: FontWeight.w600,
                             fontFamily: "Poppins SemiBold",
@@ -175,7 +180,7 @@ class ProductDetails extends StatelessWidget {
                           '\$75.00 ',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: 10.sp,
                               fontWeight: FontWeight.bold),
                         )
                       ],
@@ -186,10 +191,13 @@ class ProductDetails extends StatelessWidget {
               ],
             ),
           ),
+          K.sizedBoxH,
+
           AddButton(
             text: 'Add to cart',
             onPressed: () {},
           ),
+          K.sizedBoxH,
           K.sizedBoxH
         ],
       ),

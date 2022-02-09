@@ -20,7 +20,7 @@ class Indicator extends StatelessWidget {
           effect: const WormEffect(
               dotHeight: 10,
               dotWidth: 13,
-              activeDotColor: K.mainColor,
+              activeDotColor: K.blackColor,
               dotColor: K.whiteColor), // your preferred effect
         ),
       ),

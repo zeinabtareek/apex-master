@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constant.dart';
 
@@ -15,18 +16,18 @@ class AddButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         text!,
-        style: const TextStyle(
+        style:  TextStyle(
           color: K.whiteColor,
-          fontSize: 16,
-          fontFamily: "Poppins-Bold",
+          fontSize: 7.sp,
+          fontFamily: "Poppins SemiBold",
         ),
       ),
       style: ElevatedButton.styleFrom(
-          fixedSize: const Size(290, 40),
-          primary: K.mainColor,
+          fixedSize:  Size(150.w, 40.h),
+          primary: K.blackColor,
           // primary:Color(0xFFF5F5F5),
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class K {
@@ -12,11 +13,11 @@ class K {
   static final width = Get.width;
   static final height = Get.height;
 
-  static const sizedBoxH = SizedBox(
-    height: 15,
+  static  SizedBox sizedBoxH = SizedBox(
+    height: 15.h,
   );
-  static const sizedBoxW = SizedBox(
-    width: 22,
+  static SizedBox sizedBoxW = SizedBox(
+    width: 22.w,
   );
   static const List<Color> colorList = [
     K.whiteColor,

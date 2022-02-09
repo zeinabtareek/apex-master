@@ -13,11 +13,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
+    return  MediaQuery(
+        data: const MediaQueryData(
+        size: Size(1000, 500),
+    ),
+    child:ScreenUtilInit(
+      designSize: const Size (428,926),
       builder :()=> GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.productScreen,
+        initialRoute: AppRoutes.splashScreen,
         getPages: AppScreens.screens,
+      ),
       ),
     );
   }

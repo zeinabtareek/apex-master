@@ -40,21 +40,21 @@ class OrderDetails extends StatelessWidget {
                 ),
                 K.sizedBoxH,
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text('Classic Hoodie',style: TextStyle(color: K.grayColor,fontSize: 16),),
+                  children:  [
+                    const Text('Classic Hoodie',style: TextStyle(color: K.grayColor,fontSize: 16),),
                     K.sizedBoxW,
                     K.sizedBoxW,
-                    Text('x3',style: TextStyle(color: K.grayColor,fontSize: 20),),
-                    Text('\$338.00',style: TextStyle(color: K.blackColor ),),
+                    const Text('x3',style: TextStyle(color: K.grayColor,fontSize: 20),),
+                    const Text('\$338.00',style: TextStyle(color: K.blackColor ),),
                   ],
                 ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text('jonie Women Shoes',style: TextStyle(color: K.grayColor,fontSize: 16),),
+                  children:  [
+                    const Text('jonie Women Shoes',style: TextStyle(color: K.grayColor,fontSize: 16),),
                     K.sizedBoxW,
                     K.sizedBoxW,
-                    Text('x1',style: TextStyle(color: K.grayColor,fontSize: 20),),
-                    Text('\122.00',style: TextStyle(color: K.blackColor ),),
+                    Text('x1',style: const TextStyle(color: K.grayColor,fontSize: 20),),
+                    Text('\122.00',style: const TextStyle(color: K.blackColor ),),
                   ],
                 ), K.sizedBoxH,
                 Container(
