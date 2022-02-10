@@ -43,7 +43,7 @@ class OrderDetails extends StatelessWidget {
                   children:  [
                     const Text('Classic Hoodie',style: TextStyle(color: K.grayColor,fontSize: 16),),
                     K.sizedBoxW,
-                    K.sizedBoxW,
+                    // K.sizedBoxW,
                     const Text('x3',style: TextStyle(color: K.grayColor,fontSize: 20),),
                     const Text('\$338.00',style: TextStyle(color: K.blackColor ),),
                   ],
@@ -52,7 +52,7 @@ class OrderDetails extends StatelessWidget {
                   children:  [
                     const Text('jonie Women Shoes',style: TextStyle(color: K.grayColor,fontSize: 16),),
                     K.sizedBoxW,
-                    K.sizedBoxW,
+                    // K.sizedBoxW,
                     Text('x1',style: const TextStyle(color: K.grayColor,fontSize: 20),),
                     Text('\122.00',style: const TextStyle(color: K.blackColor ),),
                   ],
