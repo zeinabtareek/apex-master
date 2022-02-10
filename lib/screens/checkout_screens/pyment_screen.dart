@@ -3,6 +3,7 @@ import 'package:apex/component/appbar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,53 +17,48 @@ class PaymentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        label: "Checkout",
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: IconButton(
-                icon: const Icon(
-                  EvaIcons.homeOutline,
-                  color: K.mainColor,
-                  size: 30,
-                ),
-                onPressed: () {}),
-          ),
-          K.sizedBoxW,
-        ],
-      ),
+      appBar:  CustomAppBar(
+    actions: [
+    IconButton(onPressed: () {}, icon: IconButton(icon: const Icon(EvaIcons.homeOutline, color: Colors.black, ), onPressed: () {}),),
+    SizedBox(width: 6.w),
+    ],),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 20.0, top: 15.0, right: 20.0),
+          padding: EdgeInsets.symmetric
+            (horizontal: 8.0.w ,vertical: 8.0.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+               Text(
+                'Checkout',
+                style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
+              ),
               K.sizedBoxH,
               Text(
                 'Payment Methods , multiple options to select what seems compatible for you',
                 style: GoogleFonts.aBeeZee(
-                  textStyle: const TextStyle(color: K.blackColor),
+                  textStyle: TextStyle(color: K.blackColor),
                 ),
               ),
               Text(
                 '\nChoose your payment method',
                 style: GoogleFonts.aBeeZee(
-                  textStyle: const TextStyle(color: K.grayColor),
+                  textStyle: TextStyle(color: K.grayColor),
                 ),
               ),
               K.sizedBoxH,
               ListTile(
-                shape: RoundedRectangleBorder(
+          shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
                 title: Wrap(
                   children: [
                     Image.network(
                       'https://www.pngkey.com/png/full/428-4285586_cash-on-delivery-sketch.png',
+                      fit: BoxFit.contain,
                       color: Color(0xFF0D47A1),
-                      width: 50,
-                      height: 50,
+                      width: 20.w,
+                      height: 70.h,
                     ),
                     Text(
                       '\nCash on Delivery',
@@ -86,7 +82,7 @@ class PaymentScreen extends StatelessWidget {
                 ),
                 title: Image.network(
                   'https://www.pngplay.com/wp-content/uploads/8/Paypal-PNG-Clipart-Background.png',
-                  height: 60,
+                  height: 60.h,
                   alignment: Alignment.bottomLeft,
                 ),
                 leading: Radio(
@@ -98,7 +94,7 @@ class PaymentScreen extends StatelessWidget {
               ListTile(
                 title: Image.network(
                   'https://1.bp.blogspot.com/-Hj5-4vRYr7I/X40CjsbIDYI/AAAAAAAAUX4/U3Fv3eOZDVEQSRlwqH17gnbJBSsQh3dgQCLcBGAsYHQ/s2048/visa2.png',
-                  height: 60,
+                  height: 100.h,
                   alignment: Alignment.bottomLeft,
                 ),
                 leading: Radio(
@@ -106,83 +102,12 @@ class PaymentScreen extends StatelessWidget {
                   onChanged: (value) {},
                   groupValue: 4,
                 ),
-              ),
-              K.sizedBoxH,
+              ),              K.sizedBoxH,
 
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children:  [
-              //     Text(
-              //       'Sub Total',
-              //       style: GoogleFonts.aBeeZee(
-              //         textStyle: TextStyle(color: K.grayColor),
-              //       ),
-              //     ),
-              //     Text(
-              //       '\$360.00',
-              //       style: TextStyle(
-              //           // fontWeight: FontWeight.bold,
-              //           fontSize: 15,
-              //           color: K.grayColor),
-              //     ),
-              //   ],
-              // ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children:  [
-              //     Text('Shipping',
-              //       style: GoogleFonts.aBeeZee(
-              //         textStyle: TextStyle(color: K.grayColor),
-              //       ),
-              //     ),
-              //     Text('\$40.00',
-              //         style: TextStyle(
-              //             fontSize: 15,
-              //             color: K.grayColor,
-              //             height: 2)),
-              //   ],
-              // ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children:  [
-              //     Text(
-              //       'Total',
-              //       style: GoogleFonts.aBeeZee(
-              //         textStyle: TextStyle(color: K.blackColor,
-              //           fontWeight: FontWeight.bold,
-              //
-              //         ),
-              //       ),
-              //       ),
-              //     Text(
-              //       '\$400.00',
-              //       style: TextStyle(
-              //           fontWeight: FontWeight.bold,
-              //           fontSize: 16,
-              //           color: K.blackColor,
-              //           height: 3),
-              //     ),
-              //   ],
-              // ),
               Center(
-                child: AddButton(
-                    text: 'Continue to Checkout',
-                    onPressed: () {
-                      Get.to(CheckOutScreen());
-                    }),
-              ),
+                child: AddButton(text: 'Continue to Checkout', onPressed: () {Get.to(CheckOutScreen());}),),
               K.sizedBoxH,
-              Center(
-                  child: GestureDetector(
-                child: const Text(
-                  'Go back to review the Cart',
-                  style: TextStyle(
-                      color: K.grayColor, decoration: TextDecoration.underline),
-                ),
-                onTap: () {
-                  Get.to(CartScreen());
-                },
-              ))
+              Center(child:GestureDetector(child: const Text('Go back to review the Cart' ,style: TextStyle(color: K.grayColor,decoration: TextDecoration.underline),),onTap: (){Get.to(CartScreen());},))
             ],
           ),
         ),

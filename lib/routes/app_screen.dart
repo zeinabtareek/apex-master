@@ -26,7 +26,7 @@ class AppScreens {
     GetPage(name: AppRoutes.profileScreen, page: () => const ProfileScreen()),
     GetPage(name: AppRoutes.cartScreen, page: () => const CartScreen()),
     GetPage(name: AppRoutes.addressScreen, page: () => const AddressScreen()),
-    GetPage(name: AppRoutes.checksScreen, page: () => const CheckOutScreen()),
+    GetPage(name: AppRoutes.checksScreen, page: () =>  CheckOutScreen()),
     GetPage(name: AppRoutes.paymentScreen, page: () => const PaymentScreen()),
   ];
 }
