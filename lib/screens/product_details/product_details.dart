@@ -36,7 +36,7 @@ class ProductDetails extends StatelessWidget {
                     child: Image.network(
                       controller.labels[index],
                       height: double.infinity,
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
                       width: double.infinity,
                     ),
                   ),

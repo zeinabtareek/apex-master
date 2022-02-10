@@ -1,10 +1,12 @@
 import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
 import 'package:apex/component/text_field.dart';
+import 'package:apex/constant.dart';
 import 'package:apex/routes/app_route.dart';
 import 'package:apex/screens/checkout_screens/pyment_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class AddressScreen extends StatelessWidget {
@@ -56,6 +58,7 @@ class AddressScreen extends StatelessWidget {
                   label: "Note ",
                   function: (v) {},
                 ),
+                box(),
                 Center(
                   child: AddButton(
                       text: 'Continue to Payment',
@@ -108,4 +111,8 @@ class AddressScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget box() => SizedBox(
+        height: 100.h,
+      );
 }

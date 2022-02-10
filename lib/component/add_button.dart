@@ -16,14 +16,14 @@ class AddButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         text!,
-        style:  TextStyle(
+        style: TextStyle(
           color: K.whiteColor,
           fontSize: 7.sp,
           fontFamily: "Poppins SemiBold",
         ),
       ),
       style: ElevatedButton.styleFrom(
-          fixedSize:  Size(150.w, 40.h),
+          fixedSize: Size(150.w, 80.h),
           primary: K.blackColor,
           // primary:Color(0xFFF5F5F5),
           shape:

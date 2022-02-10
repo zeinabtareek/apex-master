@@ -15,7 +15,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
         label: "Cart",
         actions: [
           Icon(
@@ -39,8 +39,8 @@ class CartScreen extends StatelessWidget {
                       price: "\$250",
                       label: "Fashion",
                       image: "assets/images/kit.jpg",
-                      decrease: (){},
-                      increase: (){},
+                      decrease: () {},
+                      increase: () {},
                     );
                   }),
               Row(

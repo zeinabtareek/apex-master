@@ -21,6 +21,7 @@ class ProductsModel {
       price: snapshot['price'],
       rate: snapshot['rate'],
       inStock: snapshot['inStock'],
+
     );
   }
   Map<String, dynamic> toJson() {

@@ -36,7 +36,7 @@ class Cart extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           color: K.whiteColor,
           child: SizedBox(
-            height: 135,
+            height: 120,
             width: K.width,
             child: Row(
               children: [
@@ -58,7 +58,7 @@ class Cart extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                       Padding(
+                      Padding(
                         padding: const EdgeInsets.only(left: 20),
                         child: Text(
                           label!,
@@ -68,8 +68,8 @@ class Cart extends StatelessWidget {
                               fontFamily: "Poppins-Bold"),
                         ),
                       ),
-                       Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20, top: 5),
                         child: Text(
                           price!,
                           style: const TextStyle(
@@ -79,7 +79,7 @@ class Cart extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 20),
+                        padding: const EdgeInsets.only(top: 5),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.end,
