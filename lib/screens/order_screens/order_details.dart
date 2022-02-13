@@ -1,8 +1,5 @@
-import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import '../../constant.dart';

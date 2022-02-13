@@ -1,13 +1,11 @@
 import 'package:apex/component/appbar.dart';
 import 'package:apex/screens/order_screens/order_details.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../constant.dart';
-import '../cart_screen/cart_screen.dart';
 
 class OrderHistory extends StatelessWidget {
   const OrderHistory({Key? key}) : super(key: key);

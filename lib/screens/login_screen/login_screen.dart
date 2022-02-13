@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                       height: 120.h,
                       child: Image.asset("assets/images/logo.png"),
                     ),
-                     Text(
+                    Text(
                       "Apex",
                       style: TextStyle(
                         color: K.blackColor,
@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
               label: "Password",
               function: (v) {},
             ),
-             Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Align(
                 alignment: Alignment.bottomRight,
@@ -70,7 +70,9 @@ class LoginScreen extends StatelessWidget {
             K.sizedBoxH,
             RegisterButton(
               key: key,
-              function: () {},
+              function: () {
+                Get.toNamed(AppRoutes.registerScreen);
+              },
               label: "Login",
             ),
             K.sizedBoxH,
@@ -79,7 +81,7 @@ class LoginScreen extends StatelessWidget {
               leftLabel: "Don't have an account?",
               rightLabel: "Register",
               onTab: () {
-                Get.to(()=>const RegisterScreen());
+                Get.toNamed(AppRoutes.cartScreen);
               },
             ),
           ],

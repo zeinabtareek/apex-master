@@ -3,7 +3,6 @@ import 'package:apex/component/fixed_list_tile.dart';
 import 'package:apex/constant.dart';
 import 'package:apex/screens/profile_screen/controller/profile_controller.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../checkout_screens/pyment_screen.dart';

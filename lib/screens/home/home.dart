@@ -1,6 +1,7 @@
 import 'package:apex/constant.dart';
 import 'package:apex/screens/cart_screen/cart_screen.dart';
 import 'package:apex/screens/home/controller/home_controller.dart';
+import 'package:apex/screens/home_screen/home_screen.dart';
 import 'package:apex/screens/product_screen/products_screen.dart';
 import 'package:apex/screens/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> body = [
+      HomeScreen(),
       ProductsScreen(),
       CartScreen(),
       ProfileScreen(),

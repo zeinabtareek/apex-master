@@ -4,7 +4,6 @@ import 'package:apex/component/indicator.dart';
 import 'package:apex/constant.dart';
 import 'package:apex/screens/product_details/controller/product_details_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 

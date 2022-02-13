@@ -1,5 +1,4 @@
 import 'package:apex/controller/base_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfileController extends BaseController {

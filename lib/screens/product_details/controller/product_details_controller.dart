@@ -23,7 +23,7 @@ class ProductDetailsController extends BaseController {
     }
   }
   isFirstFunction(int index) {
-    if (index == labels.length - 4) {
+    if (index == labels.length - (labels.length-1)) {
       isFirst.value = true;
     } else {
       isFirst.value = false;

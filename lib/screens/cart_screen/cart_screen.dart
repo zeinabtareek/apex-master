@@ -3,9 +3,7 @@ import 'package:apex/component/appbar.dart';
 import 'package:apex/component/cart_container.dart';
 import 'package:apex/screens/order_screens/address_screen.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import '../../constant.dart';
 

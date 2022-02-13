@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         designSize: const Size (428,926),
         builder :()=> GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.homeScreen,
+          initialRoute: AppRoutes.home,
           getPages: AppScreens.screens,
         ),
       ),
