@@ -1,6 +1,10 @@
 import 'package:apex/controller/base_controller.dart';
+import 'package:carousel_slider/carousel_controller.dart';
+import 'package:get/get.dart';
 
 class HomeScreenController extends BaseController {
+  final CarouselController controller = CarouselController();
+  final currentIndex = 0.obs;
   final List<String> images = [
     "assets/images/fashion.jpeg",
     "assets/images/beauty.jpeg",
@@ -8,5 +12,16 @@ class HomeScreenController extends BaseController {
     "assets/images/device.jpeg",
     "assets/images/wire.jpeg"
   ];
-  final List<String> labels = ['Fashion', 'Beauty', 'Furniture', 'Device','Accessories'];
+  final List<String> labels = [
+    'Fashion',
+    'Beauty',
+    'Furniture',
+    'Device',
+    'Accessories'
+  ];
+  final List<String> orders=[
+    "assets/images/order.jpeg",
+    "assets/images/offer.jpeg",
+    "assets/images/offer2.jpeg",
+  ];
 }
