@@ -6,9 +6,8 @@ import 'package:apex/constant.dart';
 import 'package:apex/routes/app_route.dart';
 import 'package:apex/screens/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
-import '../product_details.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -20,22 +19,22 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              width: Get.width,
-              height: Get.height * 0.5,
+              width: Get.width.w,
+              height: Get.height * .9.h,
               child: CustomPaint(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 100,
-                      height: 80,
+                      width: 150.w,
+                      height: 120.h,
                       child: Image.asset("assets/images/logo.png"),
                     ),
-                    const Text(
+                     Text(
                       "Apex",
                       style: TextStyle(
                         color: K.blackColor,
-                        fontSize: 22,
+                        fontSize: 8.sp,
                         fontFamily: "Poppins-Bold",
                       ),
                     )
@@ -54,14 +53,14 @@ class LoginScreen extends StatelessWidget {
               label: "Password",
               function: (v) {},
             ),
-            const Padding(
+             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
                   "Forget Password?",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 6.sp,
                     color: K.blackColor,
                     fontFamily: "Poppins SemiBold",
                   ),
@@ -80,7 +79,7 @@ class LoginScreen extends StatelessWidget {
               leftLabel: "Don't have an account?",
               rightLabel: "Register",
               onTab: () {
-                Get.to(RegisterScreen());
+                Get.to(()=>const RegisterScreen());
               },
             ),
           ],
