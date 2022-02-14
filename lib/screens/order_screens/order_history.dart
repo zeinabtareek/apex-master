@@ -1,12 +1,11 @@
 import 'package:apex/component/appbar.dart';
 import 'package:apex/screens/order_screens/order_details.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../constant.dart';
-import '../checkout_screens/cart_screen.dart';
 
 class OrderHistory extends StatelessWidget {
   const OrderHistory({Key? key}) : super(key: key);
@@ -14,24 +13,24 @@ class OrderHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        onPressed: () {Get.back();}, actions: [
-        IconButton(onPressed: (){}, icon: Icon(Icons.favorite_outline,color: Colors.black,size: 28,),),
-        IconButton(onPressed: () {}, icon: IconButton(icon: const Icon(EvaIcons.shoppingCartOutline, color: Colors.black, size: 30,), onPressed: () {Get.to(CartScreen());}),),
-        K.sizedBoxW,
+      appBar: CustomAppBar(actions: [
+        IconButton(onPressed: () {}, icon: IconButton(icon: const Icon(EvaIcons.homeOutline, color: Colors.black, ), onPressed: () {}),),
+        SizedBox(width: 6.w),
       ],),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 10.0 ,top: 10.0),
+             Padding(
+              padding: EdgeInsets.symmetric
+                (horizontal: 5.0.w ,vertical: 8.0.h),
               child: Text('7 items',style: TextStyle(fontSize: 20),),
             ),
             ListView.builder(
               itemCount: 7,
-                padding: EdgeInsets.only(left: 11,right: 11,top: 10 ,bottom: 10),
+                padding: EdgeInsets.symmetric
+                  (horizontal: 5.0.w ,vertical: 5.0.h),
                 itemExtent: 150.0,
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,

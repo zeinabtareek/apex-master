@@ -1,6 +1,7 @@
-import 'package:apex/screens/login_screen/login_screen.dart';
-import 'package:apex/screens/splash_screen.dart';
+import 'package:apex/routes/app_route.dart';
+import 'package:apex/routes/app_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
@@ -12,9 +13,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(
+    return  MediaQuery(
+      data: const MediaQueryData(
+        size: Size(1000, 500),
+      ),
+      child:ScreenUtilInit(
+        designSize: const Size (428,926),
+        builder :()=> GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          initialRoute: AppRoutes.home,
+          getPages: AppScreens.screens,
+        ),
       ),
     );
   }

@@ -1,13 +1,12 @@
 import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../constant.dart';
-import 'cart_screen.dart';
+import '../cart_screen/cart_screen.dart';
 import 'checkout_screen.dart';
 
 class PaymentScreen extends StatelessWidget {
@@ -17,16 +16,14 @@ class PaymentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {
-          Get.back();
-        },
+        label: "Checkout",
         actions: [
           IconButton(
             onPressed: () {},
             icon: IconButton(
                 icon: const Icon(
                   EvaIcons.homeOutline,
-                  color: Colors.black,
+                  color: K.mainColor,
                   size: 30,
                 ),
                 onPressed: () {}),
@@ -41,21 +38,17 @@ class PaymentScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Checkout',
-                style: TextStyle(fontSize: 33, fontWeight: FontWeight.bold),
-              ),
               K.sizedBoxH,
               Text(
                 'Payment Methods , multiple options to select what seems compatible for you',
                 style: GoogleFonts.aBeeZee(
-                  textStyle: TextStyle(color: K.blackColor),
+                  textStyle: const TextStyle(color: K.blackColor),
                 ),
               ),
               Text(
                 '\nChoose your payment method',
                 style: GoogleFonts.aBeeZee(
-                  textStyle: TextStyle(color: K.grayColor),
+                  textStyle: const TextStyle(color: K.grayColor),
                 ),
               ),
               K.sizedBoxH,
@@ -112,7 +105,8 @@ class PaymentScreen extends StatelessWidget {
                   onChanged: (value) {},
                   groupValue: 4,
                 ),
-              ),              K.sizedBoxH,
+              ),
+              K.sizedBoxH,
 
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -170,9 +164,24 @@ class PaymentScreen extends StatelessWidget {
               //   ],
               // ),
               Center(
-                child: AddButton(text: 'Continue to Checkout', onPressed: () {Get.to(CheckOutScreen());}),),
+                child: AddButton(
+                    text: 'Continue to Checkout',
+                    onPressed: () {
+                      Get.to(CheckOutScreen());
+                    }),
+              ),
               K.sizedBoxH,
-              Center(child:GestureDetector(child: const Text('Go back to review the Cart' ,style: TextStyle(color: K.grayColor,decoration: TextDecoration.underline),),onTap: (){Get.to(CartScreen());},))
+              Center(
+                  child: GestureDetector(
+                child: const Text(
+                  'Go back to review the Cart',
+                  style: TextStyle(
+                      color: K.grayColor, decoration: TextDecoration.underline),
+                ),
+                onTap: () {
+                  Get.to(CartScreen());
+                },
+              ))
             ],
           ),
         ),

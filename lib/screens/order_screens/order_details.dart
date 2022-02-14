@@ -1,8 +1,5 @@
-import 'package:apex/component/add_button.dart';
 import 'package:apex/component/appbar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import '../../constant.dart';
@@ -14,9 +11,7 @@ class OrderDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        onPressed: () {
-          Get.back();
-        },
+
         actions: [
           IconButton(
             onPressed: () {},
@@ -42,21 +37,21 @@ class OrderDetails extends StatelessWidget {
                 ),
                 K.sizedBoxH,
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text('Classic Hoodie',style: TextStyle(color: K.grayColor,fontSize: 16),),
+                  children:  [
+                    const Text('Classic Hoodie',style: TextStyle(color: K.grayColor,fontSize: 16),),
                     K.sizedBoxW,
                     K.sizedBoxW,
-                    Text('x3',style: TextStyle(color: K.grayColor,fontSize: 20),),
-                    Text('\$338.00',style: TextStyle(color: K.blackColor ),),
+                    const Text('x3',style: TextStyle(color: K.grayColor,fontSize: 20),),
+                    const Text('\$338.00',style: TextStyle(color: K.blackColor ),),
                   ],
                 ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text('jonie Women Shoes',style: TextStyle(color: K.grayColor,fontSize: 16),),
+                  children:  [
+                    const Text('jonie Women Shoes',style: TextStyle(color: K.grayColor,fontSize: 16),),
                     K.sizedBoxW,
                     K.sizedBoxW,
-                    Text('x1',style: TextStyle(color: K.grayColor,fontSize: 20),),
-                    Text('\122.00',style: TextStyle(color: K.blackColor ),),
+                    Text('x1',style: const TextStyle(color: K.grayColor,fontSize: 20),),
+                    Text('\122.00',style: const TextStyle(color: K.blackColor ),),
                   ],
                 ), K.sizedBoxH,
                 Container(
