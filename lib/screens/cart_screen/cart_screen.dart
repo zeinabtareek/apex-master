@@ -12,16 +12,8 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(
-        label: "Cart",
-        actions: [
-          Icon(
-            EvaIcons.shoppingCart,
-            color: K.mainColor,
-          ),
-          K.sizedBoxW,
-        ],
+    return Scaffold(appBar: CustomAppBar(label: "Cart",
+        actions: [Icon(EvaIcons.shoppingCart, color: K.mainColor,), K.sizedBoxW,],
       ),
       body: SingleChildScrollView(
         child: Padding(

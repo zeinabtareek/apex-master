@@ -1,5 +1,6 @@
 import 'package:apex/constant.dart';
 import 'package:apex/screens/cart_screen/cart_screen.dart';
+import 'package:apex/screens/favorite_screen/favorite_screen.dart';
 import 'package:apex/screens/home/controller/home_controller.dart';
 import 'package:apex/screens/home_screen/home_screen.dart';
 import 'package:apex/screens/product_screen/products_screen.dart';
@@ -17,6 +18,7 @@ class Home extends StatelessWidget {
       HomeScreen(),
       ProductsScreen(),
       CartScreen(),
+      FavoriteScreen(),
       ProfileScreen(),
     ];
     final _controller = Get.put(HomeController());
