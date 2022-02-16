@@ -2,6 +2,7 @@ import 'package:apex/constant.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard(
@@ -50,7 +51,7 @@ class ProductCard extends StatelessWidget {
                       onPressed: favouriteFun,
                       icon: Icon(
                         iconData,
-                        size: 25,
+                        size: 10.sp,
                         color: K.grayColor,
                       ),
                     ),
@@ -67,23 +68,24 @@ class ProductCard extends StatelessWidget {
                 children: [
                   Text(
                     label!,
-                    style: const TextStyle(
-                      fontSize: 14,
+                    style:  TextStyle(
+                      fontSize: 6.sp,
                       color: K.blackColor,
                       fontFamily: "Poppins-Bold",
                     ),
                   ),
                   Text(
                     price!,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: K.grayColor,
-                      fontSize: 16,
+                      fontSize: 6.sp,
+                      height: 2
                     ),
                   ),
-                  const Text('In Stock',
+                   Text('In Stock',
                       style: TextStyle(
                         color: K.cardColor,
-                        fontSize: 15,
+                        fontSize: 6.sp,
                         fontWeight: FontWeight.w500,
                       )),
                   Row(
@@ -96,13 +98,13 @@ class ProductCard extends StatelessWidget {
                           color: Colors.amber,
                         ),
                         itemCount: 5,
-                        itemSize: 15.0,
+                        itemSize: 6.sp,
                         direction: Axis.horizontal,
                       ),
-                      const Icon(
+                       Icon(
                         EvaIcons.shoppingCartOutline,
                         color: K.grayColor,
-                        size: 25,
+                        size: 8.sp,
                       ),
                     ],
                   ),

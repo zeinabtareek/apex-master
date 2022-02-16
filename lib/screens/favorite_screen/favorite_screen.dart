@@ -16,8 +16,7 @@ class FavoriteScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(label: "Favorites",
         actions: [
-          SizedBox(width: 6.w),
- ]
+          SizedBox(width: 6.w),]
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -101,8 +100,8 @@ class FavoriteScreen extends StatelessWidget {
                                       ],
                                     ),K.sizedBoxH,
                                     Text('255\$',
-                                      style: const TextStyle(
-                                          fontSize: 15,
+                                      style:  TextStyle(
+                                          fontSize: 6.sp,
                                           color: K.mainColor,
                                           fontWeight: FontWeight.w600),
                                     ),
@@ -115,7 +114,6 @@ class FavoriteScreen extends StatelessWidget {
                       ),
                     );
                   }),
-
             ],
           ),
         ),

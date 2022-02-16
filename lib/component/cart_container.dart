@@ -56,7 +56,7 @@ class Cart extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 7.sp,
                           color: K.blackColor,
-                          fontFamily: "Poppins-Bold"),
+                          fontFamily: "Poppins-SemiBold"),
                     ),
                   ),
                   Padding(
@@ -66,7 +66,7 @@ class Cart extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 6.sp,
                           color: K.mainColor,
-                          fontFamily: "Poppins-Bold"),
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                 ],
@@ -79,8 +79,8 @@ class Cart extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: clear,
-                    icon: const Icon(MdiIcons.cartRemove,
-                        size: 25, color: K.mainColor),
+                    icon:  Icon(MdiIcons.cartRemove,
+                       size: 8.sp, color: K.mainColor),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
@@ -90,8 +90,8 @@ class Cart extends StatelessWidget {
                       children: [
                         IconButton(
                           onPressed: decrease,
-                          icon: const Icon(MdiIcons.minusCircle,
-                              size: 30, color: K.mainColor),
+                          icon:  Icon(MdiIcons.minusCircle,
+                              size: 10.sp, color: K.mainColor),
                         ),
                         const Text(
                           '2',
@@ -99,9 +99,9 @@ class Cart extends StatelessWidget {
                         ),
                         IconButton(
                           onPressed: increase,
-                          icon: const Icon(
+                          icon:  Icon(
                             MdiIcons.plusCircle,
-                            size: 30,
+                            size: 10.sp,
                             color: K.mainColor,
                           ),
                         ),

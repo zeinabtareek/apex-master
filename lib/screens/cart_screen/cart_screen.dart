@@ -4,6 +4,7 @@ import 'package:apex/component/cart_container.dart';
 import 'package:apex/screens/order_screens/address_screen.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../constant.dart';
 
@@ -13,7 +14,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: CustomAppBar(label: "Cart",
-        actions: [Icon(EvaIcons.shoppingCart, color: K.mainColor,), K.sizedBoxW,],
+        actions: [Icon(EvaIcons.shoppingCart, color: K.mainColor,), SizedBox(width: 6.w),],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -37,36 +38,33 @@ class CartScreen extends StatelessWidget {
               K.sizedBoxH,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children:  [
                   Text(
                     'Sub Total',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontWeight: FontWeight.w600, fontSize:6.sp,
                     ),
                   ),
                   Text(
                     '\$360.00',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
+                        fontWeight: FontWeight.w600, fontSize:6.sp,
                         color: K.mainColor),
                   ),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children:  [
                   Text(
                     'Shipping',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18, height: 2),
+                        fontWeight: FontWeight.w600, fontSize:6.sp, height: 2),
                   ),
                   Text(
                     '\$40.00',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
+                        fontWeight: FontWeight.w600, fontSize:6.sp,
                         color: K.mainColor,
                         height: 2),
                   ),
@@ -74,17 +72,16 @@ class CartScreen extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children:  [
                   Text(
                     'Total',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20, height: 3),
+                        fontWeight: FontWeight.w600, fontSize:8.sp, height: 3),
                   ),
                   Text(
                     '\$400.00',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontWeight: FontWeight.w600, fontSize:8.sp,
                         color: K.mainColor,
                         height: 3),
                   ),
