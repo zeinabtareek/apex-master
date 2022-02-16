@@ -31,8 +31,10 @@ class CartScreen extends StatelessWidget {
                       image: "assets/images/kit.jpg",
                       decrease: () {},
                       increase: () {},
+                      clear: () {},
                     );
                   }),
+              K.sizedBoxH,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [

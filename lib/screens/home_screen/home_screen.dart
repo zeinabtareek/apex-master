@@ -1,4 +1,5 @@
 import 'package:apex/component/appbar_home_screen.dart';
+import 'package:apex/component/category_card.dart';
 import 'package:apex/component/circle_card.dart';
 import 'package:apex/component/offer_card.dart';
 import 'package:apex/component/smooth_indicator.dart';
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 50.h, vertical: 15.h),
             child: AutoSizeText(
               "What are you looking for",
-              style: TextStyle(color: K.blackColor, fontSize: 8.sp),
+              style: TextStyle(color: K.blackColor, fontSize: 7.sp),
             ),
           ),
           K.sizedBoxH,
@@ -42,7 +43,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 AutoSizeText(
                   "Top Category",
-                  style: TextStyle(color: K.blackColor, fontSize: 9.sp),
+                  style: TextStyle(color: K.blackColor, fontSize: 8.sp),
                 ),
                 AutoSizeText(
                   "show all",
@@ -94,6 +95,48 @@ class HomeScreen extends StatelessWidget {
               );
             }).toList(),
           ),
+          box(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50.h),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AutoSizeText(
+                  "Recommend for you",
+                  style: TextStyle(color: K.blackColor, fontSize: 8.sp),
+                ),
+                AutoSizeText(
+                  "show all",
+                  style: TextStyle(color: K.mainColor, fontSize: 6.sp),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 2.0.w,
+              vertical: 8.0.h,
+            ),
+            child: GridView.builder(
+              padding: EdgeInsets.all(8),
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 8,
+                childAspectRatio: MediaQuery.of(context).size.width.w /
+                    (MediaQuery.of(context).size.height / 1.3.h),
+              ),
+              itemCount: 4,
+              itemBuilder: (BuildContext context, int index) => CategoryCard(
+                image:  "assets/images/kit.jpg",
+                label: "clothes",
+                price: "250\$",
+                onTap: (){},
+              ),
+            ),
+          ),
         ]),
       ),
     );
@@ -101,5 +144,5 @@ class HomeScreen extends StatelessWidget {
 }
 
 Widget box() => SizedBox(
-      height: 60.h,
+      height: 40.h,
     );

@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class AppBarHomeScreen extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarHomeScreen({Key? key,this.address}) : super(key: key);
+  const AppBarHomeScreen({Key? key, this.address}) : super(key: key);
   final String? address;
 
   @override
@@ -27,11 +27,11 @@ class AppBarHomeScreen extends StatelessWidget implements PreferredSizeWidget {
             children: [
               AutoSizeText(
                 "Delivery address",
-                style: TextStyle(color: K.grayColor, fontSize: 6.sp),
+                style: TextStyle(color: K.grayColor, fontSize: 5.sp),
               ),
               AutoSizeText(
                 address!,
-                style: TextStyle(color: K.blackColor, fontSize: 6.sp),
+                style: TextStyle(color: K.blackColor, fontSize: 5.sp),
               ),
             ],
           ),
@@ -41,6 +41,9 @@ class AppBarHomeScreen extends StatelessWidget implements PreferredSizeWidget {
         Icon(
           MdiIcons.cartOutline,
           color: K.blackColor,
+        ),
+        SizedBox(
+          width: 5.w,
         ),
         Icon(
           Icons.notifications_none_rounded,
